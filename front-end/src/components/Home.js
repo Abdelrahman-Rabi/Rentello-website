@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SearchBox from "./SearchBox";
 
 const Home = () => {
   const [Token, setToken] = useState("true");
@@ -15,6 +16,7 @@ const Home = () => {
 
   return (
     <div className="container">
+      <SearchBox />
       <div className="search ">
         <input type="text" placeholder="search" />
         <input type="submit" />

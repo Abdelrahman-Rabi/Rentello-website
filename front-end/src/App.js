@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   Route,
   BrowserRouter as Router,
@@ -16,13 +15,8 @@ import Render from "./components/Render";
 import Header2 from "./components/Header2";
 import Contact from "./components/Contact";
 
-
-
-
 const App = () => {
- 
   return (
-
     <Router>
       <div className="App">
         <Route exact path="/">
@@ -73,7 +67,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
