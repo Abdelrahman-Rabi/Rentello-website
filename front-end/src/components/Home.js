@@ -16,10 +16,8 @@ const Home = () => {
 
   return (
     <div className="container">
-      <SearchBox />
       <div className="search ">
-        <input type="text" placeholder="search" />
-        <input type="submit" />
+        <SearchBox />
       </div>
 
       <div className="div_img">

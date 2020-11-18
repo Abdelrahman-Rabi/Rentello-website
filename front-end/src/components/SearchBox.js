@@ -1,38 +1,29 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "../search_box.css";
+import axios from "axios";
 
-class SearchBox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      query: "",
-      result: {},
-      loading: false,
-      message: "",
-    };
-  }
+const SearchBox = () => {
+  const [searchInput, setsearchIput] = useState("");
 
-  handleonchange = (e) => {
-    const query = e.target.value;
-    this.setState({ query });
+  const submitSearch = () => {
+    axios.post("");
   };
-
-  render() {
-    return (
-      <div className="search-container">
-        <label className="search-label">
-          <input
-            type="text"
-            // value=""
-            placeholder="Search ..."
-            onChange={this.handleonchange}
-          />
-          <i class="fas fa-search search-icon" />
-        </label>
-        <p>my search box here</p>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="search-container">
+      <label className="search-label">
+        <input
+          type="text"
+          name="searchInput"
+          placeholder="search"
+          onChange={(e) => {
+            setsearchIput(e.target.value);
+          }}
+        />
+        <i className="fas fa-search search-icon" />
+      </label>
+      <button onClick={submitSearch}>Search</button>
+    </div>
+  );
+};
 
 export default SearchBox;
