@@ -10,7 +10,7 @@ CREATE TABLE roles (
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT NOT NULL,
     role_id INT(5),
-    Fullname VARCHAR (100) NOT NULL,
+    fullName VARCHAR (100) NOT NULL,
     email VARCHAR (100) NOT NULL,
     password VARCHAR (255) NOT NULL,
     city VARCHAR (100) NOT NULL,
@@ -28,16 +28,14 @@ CREATE TABLE post (
     user_id INT(5),
     category_id INT (5),
     comment_id INT (5),
-    name VARCHAR (100),
     price INT (100),
     post_date DATETIME,
     category VARCHAR (100),
     title VARCHAR (100),
     description VARCHAR (100),
     location VARCHAR (100),
-    fromdate VARCHAR (100),
-    todate VARCHAR (100),
-    name VARCHAR (100),
+    fromDate VARCHAR (100),
+    toDate VARCHAR (100),
     PhoneNumber INT (100),
     img_url VARCHAR (255),
     PRIMARY KEY (post_id),
@@ -49,7 +47,6 @@ CREATE TABLE category (
     category_id INT AUTO_INCREMENT NOT NULL,
     nameCategory VARCHAR (100),
      PRIMARY KEY (category_id)
-
 );
 
 
