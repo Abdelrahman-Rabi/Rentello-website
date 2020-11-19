@@ -1,93 +1,48 @@
-import React, { useState } from "react";
+import React from "react";
 
-// --------- Remove validate --------------- ABDELRAHMAN
-
-import validate from "./handleErrorRegister";
-
-import axios from "axios";
-
-const Register = () => {
-  const [values, setValues] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-    password2: "",
-    city: "",
-    address: "",
-    dob: "",
-  });
-
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    console.log(e);
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    console.log("aaa", values);
-
-    e.preventDefault();
-    setErrors(validate(values));
-    axios
-      // Bath from BE
-      .post("http://localhost:5000/register", values)
-      .then((result) => {
-        // console.log("result : ",result);
-      })
-      .catch((err) => {
-        console.log("ERR : ", err);
-      });
-  };
-
+const AddItem1 = () => {
   return (
     <div className="Register-container">
       <form onSubmit={handleSubmit}>
-        <h1>Register User</h1>
+        <h1>Add your Item here</h1>
         <div className="form-input">
-          <label>Username </label>
+          <label>Your Item Name </label>
           <br />
           <input
             type="text"
-            name="fullName"
-            placeholder="Enter your Full Name"
-            value={values.fullName}
+            name="title"
+            placeholder="Your Item Name"
+            value={values.title}
             onChange={handleChange}
           ></input>
-          {errors.fullName && <p> {errors.fullName} </p>}
         </div>
         <br />
         <div className="form-input">
-          <label>Email </label>
+          <label>Descripe Your Item </label>
           <br />
           <input
-            type="email"
-            name="email"
-            placeholder="enter your email"
-            value={values.email}
+            type="text"
+            name="description"
+            placeholder="Descripe Your Item"
+            value={values.description}
             onChange={handleChange}
           ></input>
-          {errors.email && <p> {errors.email} </p>}
         </div>
         <br />
         <div className="form-input">
-          <label>Password </label>
+          <label>Price </label>
           <br />
           <input
-            type="password"
-            name="password"
-            placeholder="enter password"
-            value={values.password}
+            type="number"
+            name="price"
+            placeholder="Price"
+            value={values.price}
             onChange={handleChange}
           ></input>
-          {errors.password && <p> {errors.password} </p>}
         </div>
         <br />
         <div className="form-input">
-          <label>Confirm Password </label>
+          <label>Select Category </label>
           <br />
           <input
             type="password"
@@ -96,7 +51,6 @@ const Register = () => {
             value={values.password2}
             onChange={handleChange}
           ></input>
-          {errors.password2 && <p> {errors.password2} </p>}
         </div>
         <br />
         <div className="form-input">
@@ -109,7 +63,6 @@ const Register = () => {
             value={values.city}
             onChange={handleChange}
           ></input>
-          {errors.city && <p> {errors.city} </p>}
         </div>
         <br />
         <div className="form-input">
@@ -130,7 +83,7 @@ const Register = () => {
           <input
             type="date"
             name="dob"
-            value={values.dob}
+            value={values.password}
             onChange={handleChange}
           ></input>
         </div>
@@ -141,4 +94,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default AddItem1;

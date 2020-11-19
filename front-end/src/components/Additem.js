@@ -5,16 +5,15 @@ import "./App.css";
 
 const Additem = () => {
   const [post, setPost] = useState([]);
-  const [Name, setName] = useState("");
-  const [price, setprice] = useState(0);
-  const [Category, setCategory] = useState("");
-  const [Title, setTitle] = useState("");
-  const [Description, setDescription] = useState("");
-  const [Location, setLocation] = useState("");
+  const [price, setPrice] = useState(0);
+  const [category, setCategory] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
   const [IMG, setIMG] = useState("");
-  const [StartDate, setStartDate] = useState("");
-  const [EndDate, setEndDate] = useState("");
-  const [PhoneNumber, setPhoneNumber] = useState(0);
+  const [fromDate, setStartDate] = useState("");
+  const [toDate, setEndDate] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(0);
 
   const CreateAllPost = (infoArgumnt) => {
     console.log(infoArgumnt);
@@ -34,15 +33,14 @@ const Additem = () => {
 
   const SavePost = () => {
     CreateAllPost({
-      name:Name,
       price: price,
-      category: Category,
-      title: Title,
-      description: Description,
-      location: Location,
-      fromdate: StartDate,
-      todate: EndDate,
-      PhoneNumber: PhoneNumber,
+      category: category,
+      title: title,
+      description: description,
+      location: location,
+      fromdate: fromDate,
+      todate: toDate,
+      PhoneNumber: phoneNumber,
       img_url: IMG,
     });
   };
@@ -55,12 +53,12 @@ const Additem = () => {
               setTitle(e.target.value);
             }}
             type="text"
-            placeholder="Write Post Title Here"
+            placeholder="Name What are you renting"
           ></input>
 
           <input
             onChange={(e) => {
-              setprice(e.target.value);
+              setPrice(e.target.value);
             }}
             type="Number"
             placeholder="Price"
@@ -71,42 +69,37 @@ const Additem = () => {
             }}
             placeholder="Select Category"
           >
-            <option>Cars</option>
-            <option>Mobile Tablet</option>
+            <option>Tools</option>
+            <option>Device</option>
+            <option>Electrical Machines</option>
+            <option>Instrument</option>
+            <option>apparatus</option>
           </select>
           <select
             onChange={(e) => {
               setLocation(e.target.value);
             }}
           >
-            <option value="0">Select Country:</option>
+            <option value="0">Select City:</option>
             <option value="1">Amman</option>
             <option>Zarqa</option>
             <option>Irbid</option>
             <option>Karak</option>
             <option>Tafila</option>
           </select>
-
           <span>Start Date</span>
           <input
             onChange={(e) => {
               setStartDate(e.target.value);
             }}
-            type="datetime-local"
+            type="Date"
           ></input>
           <span>End Date</span>
           <input
             onChange={(e) => {
               setEndDate(e.target.value);
             }}
-            type="datetime-local"
-          ></input>
-          <input
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-            type="text"
-            placeholder="Name"
+            type="Date"
           ></input>
           <input
             onChange={(e) => {
